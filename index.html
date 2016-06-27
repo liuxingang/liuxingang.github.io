@@ -233,6 +233,114 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/27/遮罩层的实现/" itemprop="url">
+                  遮罩层的实现
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-27T08:57:49+08:00" content="2016-06-27">
+              2016-06-27
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>该博客主要是用来知识点儿的积累，方便日后的使用，这次实现的是首次访问页面出现遮罩层，弹出活动页面  </p>
+<hr>
+<p>####HTML  </p>
+<p>##<br><code>&lt;div class=&quot;overlay&gt;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;div class=&quot;overlay-wrap&quot;&gt;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;img src=&quot;overlay.png&quot;&gt;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;a class=&quot;overlay-btn&quot; href=&quot;#&quot;&gt;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;img src=&quot;123.png&quot;&gt;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;/a&gt;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;a class=&quot;overlay-close&quot; href=&quot;javascript:void(0)&quot;&gt;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;img src=&quot;123.png&quot;&gt;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;/a&gt;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;<code>&lt;/div&gt;</code><br><code>&lt;/div&gt;</code> </p>
+<hr>
+<p>####css</p>
+<p>##<br>.overlay{<br>&nbsp;&nbsp;&nbsp;&nbsp;background:rgba(0,0,0,0.5);<br>&nbsp;&nbsp;&nbsp;&nbsp;filter:alpha(opacity=50);<br>&nbsp;&nbsp;&nbsp;&nbsp;display:none;<br>&nbsp;&nbsp;&nbsp;&nbsp;position:fixed;<br>&nbsp;&nbsp;&nbsp;&nbsp;top:0px;<br>&nbsp;&nbsp;&nbsp;&nbsp;left:0px;<br>&nbsp;&nbsp;&nbsp;&nbsp;width:100%;<br>&nbsp;&nbsp;&nbsp;&nbsp;height:100%;<br>&nbsp;&nbsp;&nbsp;&nbsp;z-index:100;<br>}  </p>
+<p>.overlay-wrap{<br>&nbsp;&nbsp;&nbsp;&nbsp;width:600px;<br>&nbsp;&nbsp;&nbsp;&nbsp;height:500px;<br>&nbsp;&nbsp;&nbsp;&nbsp;position:absolute;<br>&nbsp;&nbsp;&nbsp;&nbsp;top:50%;<br>&nbsp;&nbsp;&nbsp;&nbsp;left:50%;<br>&nbsp;&nbsp;&nbsp;&nbsp;margin-left:-300px;<br>&nbsp;&nbsp;&nbsp;&nbsp;margin-top:-250px;<br>}  </p>
+<p>.overlay-wrap .overlay-btn{<br>&nbsp;&nbsp;&nbsp;&nbsp;position:absolute;<br>&nbsp;&nbsp;&nbsp;&nbsp;bottom:100px;<br>&nbsp;&nbsp;&nbsp;&nbsp;left:232px;<br>}  </p>
+<p>.overlay-wrap .overlay-close{<br>&nbsp;&nbsp;&nbsp;&nbsp;position:absolute;<br>&nbsp;&nbsp;&nbsp;&nbsp;right:88px;<br>&nbsp;&nbsp;&nbsp;&nbsp;top:70px;<br>}  </p>
+<hr>
+<p>####js</p>
+<p>##<br>点击按钮关闭遮罩层<br>$(document).ready(function(){<br>&nbsp;&nbsp;&nbsp;&nbsp;$(“.overlay-close”).click(function(){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(“.overlay”).fadeOut(500);<br>&nbsp;&nbsp;&nbsp;&nbsp;});<br>});  </p>
+<p>#####使用 sessionStorage 关闭窗口sessionStorage会被清除，打开新窗口，遮罩层就会出现<br>if(!sessionStorage.getItem(“overlay”)){<br>&nbsp;&nbsp;&nbsp;&nbsp;sessionStorage.overlay=0;<br>&nbsp;&nbsp;&nbsp;&nbsp;$(“.overlay”).show();<br>}else{<br>&nbsp;&nbsp;&nbsp;&nbsp;sessiontorage.overlay = pareInt(sessiontorage.getItem(“overlay”)) + 1;<br>&nbsp;&nbsp;&nbsp;&nbsp;if(sessionStorage.overlay !==0){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(“.overlay”).hide();<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}  </p>
+<p>####localStorage 清除时机因浏览器和设置的不同，所以选择使用了sessionStorage</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/30/考了这个试好好玩前端/" itemprop="url">
                   考了这个试，好好玩前端
                 </a>
@@ -481,7 +589,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
