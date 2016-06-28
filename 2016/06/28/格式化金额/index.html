@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yiluyouni.net/2016/06/28/格式化金额/index.html">
 <meta property="og:site_name" content="一路有你">
 <meta property="og:description" content="简单的实现整数金额的格式化，三位数字之间用逗号分隔。">
-<meta property="og:updated_time" content="2016-06-28T04:14:04.151Z">
+<meta property="og:updated_time" content="2016-06-28T04:23:29.731Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="格式化金额">
 <meta name="twitter:description" content="简单的实现整数金额的格式化，三位数字之间用逗号分隔。">
@@ -273,7 +273,7 @@
       
         <p>简单的实现整数金额的格式化，三位数字之间用逗号分隔。<br><a id="more"></a><br>由于js功底比较差，先把正则相关的内容过了一遍，今后还需进一步学习正则相关知识  </p>
 <hr>
-<p>function formatMoney(num){<br>    var num = parseInt(num).toString();<br>    var len = num.length;<br>    if(len<4){ return="" num;="" }="" var="" n="len%3;">0 ? num.slice(0,n) + “,” + num.slice(n,len).match(/\d{3}/g).join(“,”) : num.slice(n,len).match(/\d{3}/g).join(“,”);<br>}<br>console.log(formatMoney(“12345678”))</4){></p>
+<p><code><br>function formatMoney(num){<br>&nbsp;&nbsp;&nbsp;&nbsp;var num = parseInt(num).toString();<br>&nbsp;&nbsp;&nbsp;&nbsp;var len = num.length;<br>&nbsp;&nbsp;&nbsp;&nbsp;if(len<4){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return="" num;="" &nbsp;&nbsp;&nbsp;&nbsp;}="" &nbsp;&nbsp;&nbsp;&nbsp;var="" n="len%3;" &nbsp;&nbsp;&nbsp;&nbsp;return="">0 ? num.slice(0,n) + “,” + num.slice(n,len).match(/\d{3}/g).join(“,”)<br>&nbsp;&nbsp;&nbsp;&nbsp; : num.slice(n,len).match(/\d{3}/g).join(“,”);<br>}<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(formatMoney(“12345678”))<br></4){></code></p>
 
       
     </div>
